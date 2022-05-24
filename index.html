@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Resipe</title>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./index.html">ABOUT</a></li>
+    </ul>
+    <header>
+        <h1>Simple Resipe Maker</h1>
+    </header>
+
+    <form>
+
+        <label for="resipe-title">Title:</label><br>
+        <input type="text" id="resipe-title" name="resipe-title" class="resipe-title"><br>
+
+        <label for="resipe-ingredients">Ingredients:</label><br>
+        <input type="text" id="resipe-ingredients" name="resipe-ingredients" class="resipe-ingredients"><br>
+
+        <label for="resipe-instructions">Instructions:</label><br>
+        <input type="text" id="resipe-instructions" name="resipe-instructions" class="resipe-instructions"><br>
+        
+        <button class="resipe-refresh" type="refresh">
+            <i class="fas fa-refresh"></i>
+        </button>
+
+        <button class="resipe-button" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
+    </form>
+    <div class="resipe-container">
+        <ul class="resipe-list">
+            <div class="resipe">
+                <li>Resipe title</li>
+                <li>ingredients</li>
+                <li>instructions</li>
+                <button>delete</button>
+                <button>clear</button>
+            </div>
+        </ul>
+    </div>
+
+
+    <script src="./app.js"></script>
+    
+</body>
+</html>
