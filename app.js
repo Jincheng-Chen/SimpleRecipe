@@ -11,6 +11,8 @@ const resipeList = document.querySelector('.resipe-list');
 const resipeTitle = document.querySelector('.resipe-title');
 const resipeIngredients = document.querySelector('.resipe-ingredients');
 const resipeInstructions = document.querySelector('.resipe-instructions');
+const clearButton = document.querySelector('.clear-button');
+const deleteAllButton = document.querySelector('.deleteAll-button')
 
 //Preload the form
 const JSON_Recipe = JSON.parse(preLoadedRecipe);
@@ -22,8 +24,30 @@ resipeInstructions.value = JSON_Recipe.instructions;
 //Event Listeners
 resipeButton.addEventListener('click',addResipe);
 resipeList.addEventListener('click',deleteResipe);
+clearButton.addEventListener('click',clearForm);
+deleteAllButton.addEventListener('click',deleteAll);
 
 //Functions
+function clearForm(event){
+    event.preventDefault();
+
+    const item = event.target;
+
+    if(item.classList[0] === "clear-button"){
+        resipeTitle.value = "";
+        resipeIngredients .value = "";
+        resipeInstructions.value = "";
+    };
+
+
+}
+
+function deleteAll(event){
+    event.preventDefault();
+
+    resipeList.innerHTML="";
+
+}
 function addResipe(event){
     // prevent refreshing
     event.preventDefault();

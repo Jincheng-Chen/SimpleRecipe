@@ -90,3 +90,11 @@ form button:hover{
     padding: 1vh;
     background: #ffff0f;
 }
+
+label{
+    font-size: 2rem;
+    display: flex;
+    justify-content: left;
+    position: relative;
+    
+}
