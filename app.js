@@ -1,3 +1,8 @@
+//JSON Objects
+const preLoadedRecipe =  '{"title": "Garlic Shrimp Pasta","ingredients":"Linguine Pasta, Garlic, Butter, Shrimps","instructions":"1. To begin making the Garlic Shrimp Linguine Pasta recipe, Take a large pot of boiling salted water, cook pasta according to package instructions; drain well. Wash it under cold water to stop further cooking, drizzle some olive oil over it and coat the pasta well and keep aside. 2. Season shrimp with salt and pepper, to taste; set aside. 3. Melt 2 tablespoon ..."}';
+
+
+
 //Selectors
 const resipeInput = document.querySelector('.resipe-input');
 const resipeButton = document.querySelector('.resipe-button');
@@ -7,13 +12,18 @@ const resipeTitle = document.querySelector('.resipe-title');
 const resipeIngredients = document.querySelector('.resipe-ingredients');
 const resipeInstructions = document.querySelector('.resipe-instructions');
 
+//Preload the form
+const JSON_Recipe = JSON.parse(preLoadedRecipe);
+resipeTitle.value = JSON_Recipe.title;
+resipeIngredients.value = JSON_Recipe.ingredients;
+resipeInstructions.value = JSON_Recipe.instructions;
 
 
 //Event Listeners
 resipeButton.addEventListener('click',addResipe);
 resipeList.addEventListener('click',deleteResipe);
-//Functions
 
+//Functions
 function addResipe(event){
     // prevent refreshing
     event.preventDefault();
@@ -41,10 +51,10 @@ function addResipe(event){
     deleteButton.classList.add("delete-button");
     resipeDiv.appendChild(deleteButton);
 
-    const checkButton = document.createElement("button");
-    checkButton.innerHTML = '<i class="fa fa-refresh" aria-hidden="true"></i>';
-    checkButton.classList.add("check-button");
-    resipeDiv.appendChild(checkButton);
+    // const checkButton = document.createElement("button");
+    // checkButton.innerHTML = '<i class="fa fa-refresh" aria-hidden="true"></i>';
+    // checkButton.classList.add("check-button");
+    // resipeDiv.appendChild(checkButton);
 
     //fanlly add the resipe to the list
 
